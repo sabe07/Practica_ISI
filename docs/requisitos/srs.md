@@ -267,7 +267,16 @@ para conservar la procedencia de la definición. El catálogo de requisitos podr
 enlazar a los términos de esta sección, pero no los definirá de nuevo.
 
 | Término | Definición en Proyecto Simbiosis | Fuente |
-| --- | --- | --- |
+| Nutricionista | Rol común que engloba tanto a médicos como a nutricionistas profesionales, los cuales poseen las mismas funciones y permisos en la plataforma. | Sección 1.3: Nutricionistas acreditados |
+| Cuidador | Usuario registrado para asociarse y cuidar a uno o varios pacientes (requiriendo autorización expresa de cada uno). Su cuenta requiere aprobación y solo accede a los datos de salud explícitamente autorizados por el paciente. | Sección 1.2 (Aprobación de cuentas) y Sección 2 (Pacientes, cuidadores y datos de salud) |
+| Paciente | Usuario registrado con la enfermedad que no requiere aprobación adicional tras verificar su correo electrónico. Es el titular de los datos personales y de salud privados, pudiendo autorizar explícitamente el acceso a estos últimos a uno o varios cuidadores. | Sección 1.2 (Aprobación de cuentas), Sección 2 (Pacientes, cuidadores y datos de salud) y Sección 7.1 (Privacidad) |
+| Coordinador | Único rol con facultades de administración y moderación de contenidos e interacciones del foro. Corresponde a una persona contratada por la organización a dedicación parcial y con horario de moderación no continuo. | Sección 4: Foro, interacción y moderación |
+| Receta adaptada | Acción de encontrar y mostrar recetas adecuadas al perfil, alergias y restricciones alimentarias declaradas del paciente. No implica la modificación ni la sustitución automática de ingredientes o cantidades por parte del sistema. | Sección 3: Recetas y gestión de la dieta |
+| Receta validada | Receta apta para publicación general, creada directamente por un nutricionista o propuesta por un usuario (paciente/cuidador) y aprobada posteriormente por un nutricionista. | Sección 3: Recetas y gestión de la dieta |
+| Publicaciones de salud | Artículos breves sobre alimentación y hábitos de vida saludables redactados exclusivamente por nutricionistas. No requieren validación de otros profesionales, se pueden comentar pero no valorar numéricamente. | Sección 5: Publicaciones de salud |
+| Foro | Espacio común y público (legible sin registro) destinado a compartir dudas y experiencias sobre la convivencia con la enfermedad. No admite foros privados y está diferenciado de la sección de comentarios de las recetas. | Sección 1.1 (Acceso y registro) y Sección 4 (Foro, interacción y moderación) |
+| Cuenta inactiva | Estado en el que entra la cuenta de un cuidador tras transcurrir tres meses continuos sin tener ningún paciente asociado. Puede reactivarse si vuelve a asociarse a un paciente. | Sección 2: Pacientes, cuidadores y datos de salud|
+
 
 ## 10. Modelos de análisis
 
