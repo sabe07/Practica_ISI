@@ -279,6 +279,10 @@ FR-017 se conserva para no perder el identificador histórico, pero su estado es
 | ID | Categoría y atributo | Requisito no funcional | Ámbito (Global/Local) | UR/FR relacionados | Método de comprobación | Estado |
 | --- | --- | --- | --- | --- | --- | --- |
 | NFR-07 |NFR-Q (Eficiencia; Escalabilidad; Mantenibilidad) |La plataforma mantendrá los objetivos de capacidad y rendimiento definidos para la primera versión sin intervención manual del personal de la organización.| G | -  | Prueba de carga automatizada con 100 usuarios concurrentes y 10 operaciones/s durante 30 min; comprobar mediante registros de monitorización, ausencia de intervención manual. | - |
+| NFR-08 |NFR-I (Requisitos de la interfaz) | El registro estándar solicitará nombre completo, alias, correo electrónico, teléfono y contraseña. | L | UR-01 | El alias (mínimo 3 caracteres, no admitirá espacios y podrá incluir guion o guion bajo) y el correo electrónico (comprobado a tiempo real) deberán ser únicos.
+Si el alias ya está ocupado, la interfaz podrá proponer alternativas, sin impedir que la persona introduzca manualmente otro alias | Vigente
+| NFR-09 |NFR-R (Restricciones de diseño e implementación) |Se podrán registrar valores de laboratorio definidos por el paciente. Cada uno incluirá fecha, hora, valor numérico y unidad obligatoria de una lista. Se podrán añadir notas, parámetros de laboratorio adicionales y etiquetas| L | En los campos numéricos, las unidades se seleccionarán por separado; el sistema indicará que solo debe introducirse el valor numérico.
+Se aplicarán validaciones básicas de rango para evitar valores manifiestamente erróneos, como temperaturas fuera del intervalo de 30 a 45 ºC. | Vigente
 
 Categorías y atributos: 
 1) Requisitos de calidad (NFR-Q): Rendimiento, Usabilidad, Seguridad, Fiabilidad, Disponibilidad, Modificabilidad, Portabilidad, Eficiencia, Escalabilidad, Verificabilidad / Testabilidad, Robustez, Seguridad funcional (safety), Integridad, Reusabilidad, Instalabilidad.
