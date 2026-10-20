@@ -138,12 +138,12 @@ Repite el esquema siguiente para cada caso que se vaya a describir. Sustituye `U
 **Postcondiciones:** una vez finalizado el caso de uso con éxito se mantienen los datos actualizados, en caso de que falle o haya algún error se recuperan los daos originales y no se modifica nada.
 
 **Reglas y NFR pertinentes:**
-NFR-001 (NFR-Q · Disponibilidad): La plataforma alcanzará una disponibilidad mínima del 99,5 % en cada mes natural, medida mediante comprobaciones externas cada cinco minutos.
-NFR-004(NFR-Q · Capacidad y escalabilidad): La plataforma soportará una carga de 100 usuarios concurrentes y 10 operaciones por segundo durante 30 minutos.
-NFR-005 (NFR-Q · Rendimiento): Con la carga de NFR-004, el 95 % de los inicios de sesión y de las consultas definidas para la prueba se completará en un máximo de 2 segundos.
-NFR-008 (NFR-Q · Recuperabilidad): Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente.
-NFR-009 (NFR-Q · Integridad): Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente.
-NFR-015 (NFR-I · Interfaz de software y autenticación): La autenticación mediante una cuenta de Google utilizará OAuth 2.0 u OpenID Connect sobre HTTPS y la plataforma no almacenará la contraseña de Google.
+  - NFR-001 (NFR-Q · Disponibilidad): La plataforma alcanzará una disponibilidad mínima del 99,5 % en cada mes natural, medida mediante comprobaciones externas cada cinco minutos.
+  - NFR-004(NFR-Q · Capacidad y escalabilidad): La plataforma soportará una carga de 100 usuarios concurrentes y 10 operaciones por segundo durante 30 minutos.
+  - NFR-005 (NFR-Q · Rendimiento): Con la carga de NFR-004, el 95 % de los inicios de sesión y de las consultas definidas para la prueba se completará en un máximo de 2 segundos.
+  - NFR-008 (NFR-Q · Recuperabilidad): Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente.
+  - NFR-009 (NFR-Q · Integridad): Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente.
+  - NFR-015 (NFR-I · Interfaz de software y autenticación): La autenticación mediante una cuenta de Google utilizará OAuth 2.0 u OpenID Connect sobre HTTPS y la plataforma no almacenará la contraseña de Google.
 
 Tratamiento de datos de salud - El sistema no debe tratar esos datos hasta que esa decisión esté aprobada por la organización.
 
@@ -178,10 +178,10 @@ Describe el comportamiento que se necesita. Las decisiones sobre componentes, cl
 **Postcondiciones:** No se modifica ningun dato ni receta una vez finalizado el caso de uso.
 
 **Reglas y NFR pertinentes:** 
-NFR-002 (NFR-I · Integridad): La plataforma realizará al menos una copia de seguridad diaria de la información de salud y de las recetas.
-NFR-006 (NFR-Q · Rendimiento): Con la carga de NFR-004, el 95 % de las publicaciones de recetas, comentarios o mensajes se completará en un máximo de 3 segundos.
-NFR-008 (NFR-Q · Recuperabilidad): Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente.
-NFR-009 (NFR-Q · Integridad): Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente.
+  - NFR-002 (NFR-I · Integridad): La plataforma realizará al menos una copia de seguridad diaria de la información de salud y de las recetas.
+  - NFR-006 (NFR-Q · Rendimiento): Con la carga de NFR-004, el 95 % de las publicaciones de recetas, comentarios o mensajes se completará en un máximo de 3 segundos.
+  - NFR-008 (NFR-Q · Recuperabilidad): Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente.
+  - NFR-009 (NFR-Q · Integridad): Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente.
 
 Tratamiento de datos de salud - El sistema no debe tratar esos datos hasta que esa decisión esté aprobada por la organización.
 Finalidad, minimización y conservación - El sistema solo debe recoger los datos necesarios para una finalidad definida. La organización debe establecer cuánto tiempo se conservan y cuándo se eliminan o anonimizan.
