@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 1.6 | 10/10/2026 | Plantilla |
+| 1.7 | 20/10/2026 | Plantilla |
 
 Esta es la plantilla base reutilizable. Conserva sus instrucciones y campos pendientes. Para iniciar el modelo, copia su contenido en [modelo-casos-de-uso.md](modelo-casos-de-uso.md). Si el modelo ya contiene resultados, continúa sobre él sin sustituirlos por la plantilla.
 
@@ -110,35 +110,91 @@ Consulta el [catálogo canónico](../requisitos/catalogo-requisitos.md) y la [SR
 
 Repite el esquema siguiente para cada caso que se vaya a describir. Sustituye `UC-XX` y el nombre del encabezado por el identificador y el nombre del apartado 3; numera los apartados de forma consecutiva. El nivel de detalle dependerá del trabajo previsto para ese caso.
 
-### 6.1 Descripción detallada UC-XX — [Nombre del caso de uso]
+### 6.1 Descripción detallada UC-XX — Actualizar perfil
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** Actualizar perfil (UC-05)
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** Modificar los datos personales y conservar los cambios.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** Usuario registrado.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** La persona ya tiene una cuenta activa y una sesión iniciada.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** El usuario solicita actualizar su perfil.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:**
+  - El sistema muestra los datos actuales indicando cuales son editables y cuales no editables.
+  - El usuario modifica los campos de su perfil.
+  - El usuario solicita guardar los cambios.
+  - El sistema comprueba los datos se han introducido correctamente.
+  - El sistema guarda los datos validados
+  - El sistema confirma la modificación del perfil.
+  - El caso de uso finaliza.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):**
+  - 5.a faltan datos o hay datos no válidos.
+  - *.a El usuario cancela en cualquier momento.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+**Postcondiciones:** una vez finalizado el caso de uso con éxito se mantienen los datos actualizados, en caso de que falle o haya algún error se recuperan los daos originales y no se modifica nada.
 
-**Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
+**Reglas y NFR pertinentes:**
+NFR-001 (NFR-Q · Disponibilidad): La plataforma alcanzará una disponibilidad mínima del 99,5 % en cada mes natural, medida mediante comprobaciones externas cada cinco minutos.
+NFR-004(NFR-Q · Capacidad y escalabilidad): La plataforma soportará una carga de 100 usuarios concurrentes y 10 operaciones por segundo durante 30 minutos.
+NFR-005 (NFR-Q · Rendimiento): Con la carga de NFR-004, el 95 % de los inicios de sesión y de las consultas definidas para la prueba se completará en un máximo de 2 segundos.
+NFR-008 (NFR-Q · Recuperabilidad): Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente.
+NFR-009 (NFR-Q · Integridad): Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente.
+NFR-015 (NFR-I · Interfaz de software y autenticación): La autenticación mediante una cuenta de Google utilizará OAuth 2.0 u OpenID Connect sobre HTTPS y la plataforma no almacenará la contraseña de Google.
 
-**Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
+Tratamiento de datos de salud - El sistema no debe tratar esos datos hasta que esa decisión esté aprobada por la organización.
 
+**Preguntas abiertas:** No hay preguntas
+
+Describe el comportamiento que se necesita. Las decisiones sobre componentes, clases o tecnologías pertenecen al trabajo de arquitectura y diseño.
+
+### 6.2 Descripción detallada UC-XX — Buscar recetas
+
+**Identificador y nombre del caso de uso:** Buscar recetas (UC-21)
+
+**Objetivo:** Consultar la información de una receta
+
+**Participantes:** Usuario registrado.
+
+**Precondiciones:** El usuario debe tener al menos una receta creada.
+
+**Inicio:** El usuario pone en el buscador la información necesaria para buscar una receta.
+
+**Escenario principal de éxito:**
+  - El sistema encuentra la receta solicitada por el usuario.
+  - El sistema valida que se ha encontrado la receta correcta.
+  - El sitema muestra los datos de la receta.
+  - El sistema detalla la información que requiera el usuario.
+  - El caso de uso finaliza.
+
+**Extensiones (flujos alternativos):**
+  - 1.a. El usuario cancela la búsqueda.
+  - 2.a. Faltan datos en la receta obtenida.
+  - 2.b. El sistema muestra la receta errónea.
+
+**Postcondiciones:** No se modifica ningun dato ni receta una vez finalizado el caso de uso.
+
+**Reglas y NFR pertinentes:** 
+NFR-002 (NFR-I · Integridad): La plataforma realizará al menos una copia de seguridad diaria de la información de salud y de las recetas.
+NFR-006 (NFR-Q · Rendimiento): Con la carga de NFR-004, el 95 % de las publicaciones de recetas, comentarios o mensajes se completará en un máximo de 3 segundos.
+NFR-008 (NFR-Q · Recuperabilidad): Tras un incidente grave, la plataforma recuperará las funciones principales en un máximo de cuatro horas desde la declaración del incidente.
+NFR-009 (NFR-Q · Integridad): Tras un incidente grave, la pérdida de información no superará la correspondiente a las 24 horas anteriores al incidente.
+
+Tratamiento de datos de salud - El sistema no debe tratar esos datos hasta que esa decisión esté aprobada por la organización.
+Finalidad, minimización y conservación - El sistema solo debe recoger los datos necesarios para una finalidad definida. La organización debe establecer cuánto tiempo se conservan y cuándo se eliminan o anonimizan.
+Información y derechos de las personas - El sistema debe informar de forma clara antes de recoger los datos sobre quién los trata, para qué y cómo pueden las personas ejercer sus derechos.
+
+**Preguntas abiertas:** No hay preguntas
 Describe el comportamiento que se necesita. Las decisiones sobre componentes, clases o tecnologías pertenecen al trabajo de arquitectura y diseño.
 
 ## 7 Continuidad entre iteraciones
 
 En E1, indica que esta es la primera vista del modelo. A partir de la siguiente iteración, resume qué elementos se incorporan y cuáles se revisan, conservan o retiran.
 
-[Explica la situación del modelo y su continuidad.]
+Descripción de los casos de uso UC-05 y UC-21.
 
 Este apartado describe la evolución del modelo. No sustituye la evaluación de la iteración. Los resultados de arquitectura, las pruebas y las desviaciones del plan se registran en sus documentos correspondientes.
 
