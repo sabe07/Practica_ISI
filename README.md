@@ -39,3 +39,5 @@ Los nombres de archivo no incluyen números de versión: el histórico y las ver
 - `docs/referencias/` contiene únicamente material externo o recibido; los documentos propios viven en las demás carpetas de `docs/`.
 - `releases/` contiene solo exportaciones estables; no es la fuente editable.
 
+## Enlace a modelo dominio:
+docs/modelos/modelo-dominio.md
